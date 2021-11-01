@@ -1,0 +1,56 @@
+{% extends "layout/base.twig" %}
+
+{% set title = fname %}
+
+{% block content %}
+    <form>
+    <table class="mx-auto w-96">
+        <thead>
+            <tr>
+                <th class="sticky top-0 whitespace-nowrap p-2 text-right bg-yellow-900">#</th>
+                {% for ctitle in header %}
+                    <th class="sticky top-0 whitespace-nowrap p-2 text-left bg-yellow-900">{{ ctitle }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody class="cursor-pointer">
+            {% for row in rows %}
+                <tr class="{{ loop.index0 is odd ? 'bg-yellow-900 bg-opacity-25' : '' }} hover:bg-opacity-50 hover:bg-yellow-700">
+                    <td class="text-right whitespace-nowrap p-2">{{ loop.index }}</td>
+                    {% for cell in row %}
+                        <td class="whitespace-nowrap p-2">{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </form>
+{% endblock %}
+
+
+{% block footer %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$last = null;
+
+$('tbody td').click(function (e) {
+
+    $tr = $(this).parent();
+
+    if ($last != null) {
+        $last.find('td').removeClass('bg-opacity-50 bg-yellow-500');
+
+        if ($last.find('td:first-child').html() == $tr.find('td:first-child').html()) {
+            return;
+        }
+    }
+    
+    $tr.find('td').addClass('bg-opacity-50 bg-yellow-500');
+
+    $last = $tr;
+});
+
+</script>
+{% endblock %}

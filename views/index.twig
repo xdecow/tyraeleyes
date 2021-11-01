@@ -1,0 +1,13 @@
+{% extends "layout/base.twig" %}
+
+{% block title %}Diablo 2 txt file viewer{% endblock %}
+
+{% block content %}
+    <div class="max-w-prose mx-auto">
+        <ul>
+        {% for file in files %}
+            <li><a class="text-yellow-600 hover:text-yellow-200" href="/view/{{ file }}">{{ file }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

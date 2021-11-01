@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% set pname = "TyraelEyes" %}
+{% set pdesc = "Diablo 2 TXT file viewer" %}
+
+
+<html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <title>{% if title %}{{ title }} | {{ pname }}{% else %}{{ pname }} - {{ pdesc }}{% endif %}</title>
+
+            <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body class="bg-black text-white antialiased">
+
+        <div class="mx-auto divide-y divide-gray-700">
+
+            <div class="flex space-x-16 p-8 items-center">
+                <div class="">
+                    <h1 class="text-4xl"><a class="text-yellow-600 hover:text-yellow-200" href="/">{{ pname }}</a></h1>
+                    <p class="text-sm">{{ pdesc }}</p>
+                </div>
+
+                {% if title %}
+                <div class="items-center">
+                    <h2 class="text-2xl">{{ title }}</h2>
+                </div>
+                <div class="items-center">
+                    <a href="/" class="text-yellow-600 hover:text-yellow-200">Voltar</a>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="py-8">
+                {% block content %}{% endblock %}
+            </div>
+
+            <div class="text-center text-sm p-8">
+                &copy; Copyright 2021 by xdecow
+            </div>
+
+        </div>
+
+
+        {% block footer %}{% endblock %}
+    </body>
+</html>
