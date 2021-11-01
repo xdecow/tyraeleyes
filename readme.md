@@ -14,4 +14,5 @@ Diablo 2 TXT files viewer.
 ## Made with
 - Slim PHP Framework (https://www.slimframework.com/)
 - Tailwind CSS Framework (https://tailwindcss.com/)
-
+- Twig Template Engine (https://twig.symfony.com/)
+- PHP Office (https://github.com/PHPOffice)
