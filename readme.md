@@ -1,3 +1,6 @@
+# TyraelEyes
+Diablo 2 TXT files viewer.
+
 ## Requirements
 - PHP 7+
 - Composer (https://getcomposer.org/)
