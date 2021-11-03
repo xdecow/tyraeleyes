@@ -10,6 +10,8 @@ Diablo 2 TXT files viewer.
 
 ## Run Server
 ```php -S localhost:8888 -t public public/index.php```
+or
+```./server.sh```
 
 ## Made with
 - Slim PHP Framework (https://www.slimframework.com/)
